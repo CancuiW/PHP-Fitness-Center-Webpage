@@ -1,0 +1,59 @@
+<!-- 
+    @Author: CanCui
+    @Date: April 7, 2023
+    @PHP Version: PHP 8.0
+    @Purpose: unify the style of navigation to every page.Add logo and translation in this part.
+-->
+
+<nav>
+    <ul class="menu">
+            <li class="logo"><a class="logo_text" href="./index.php?go=c1">Dynamic Fitness Club</a></li>
+            <li class="logo"><a class="logo_link" href="./index.php?go=c1"><img src="./images/logo.jpg" alt="Logo"></a></li>
+           <!-- call the translate API in the nav-->
+            <li id='google_translate_element'></li>
+            <script src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'></script>
+            <script>
+                function googleTranslateElementInit(){
+                    new google.translate.TranslateElement(
+                        {pageLanguage:'en'},
+                        'google_translate_element'
+
+                    );
+                }
+            </script>
+
+            <li class="item">
+                <a  href="./index.php?go=c1">Home</a>
+            </li>
+            <li class="item">
+                <a href="./index.php?go=c2">Contents</a>
+            </li>
+            <li class="item">
+                <a href="./index.php?go=c4">Classes</a>
+            </li>
+            <li class="item">
+                <a href="./index.php?go=c5">Map</a>
+            </li>
+            
+            <li class="item button"><a href="./index.php?go=c3">Book a Tour</a></li>
+            <li class="toggle"><span class="bars"></span></li>
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $(".toggle").on("click", function() {
+                if($(".item").hasClass("active")) {
+                    $(".item").removeClass("active");
+                } else {
+                    $(".item").addClass("active");
+                }
+            })
+        });
+    </script>
+
+</nav>
+
+
+
+
